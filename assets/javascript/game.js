@@ -13,30 +13,36 @@ var keyspressedText=document.getElementById("keyspressed");
 
 
 // onkey, computer checks to see if input matches selcted letter
-document.onkeyup = function(event){
+var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+console.log("the computer picked "+ computerGuess);
+
+document.onkeyup = function(event){ 
 
     var userGuess = event.key;
+    console.log(event);
 
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-// if guess matches computer:
+
+// // if guess matches computer:
 if (userGuess === computerGuess){wins++;}
-else {losses++; guesses--}
+else {guessesleft--};
+console.log(wins);
+console.log(guessesleft);
 
-    // update wins to +1
+//     // update wins to +1
 winsText.textContent = wins;
-    // reset guesses left to 9
-    // reset keyspressed to empty
-    // computer to select new random letter
-// if it does not match:
-    // updated guesses left to minus 1
+//     // reset guesses left to 9
+//     // reset keyspressed to empty
+//     // computer to select new random letter
+// // if it does not match:
+//     // updated guesses left to minus 1
 guessesText.textcontent = guessesleft;
-    // show letter guessed in "key pressed"
+//     // show letter guessed in "key pressed"
 
-// if guesses left reaches 0
-    // update losses to +1
+// // if guesses left reaches 0
+//     // update losses to +1
 lossesText.textContent = losses;
-    // reset guesses left to 0
-    // reset keys pressed to empty
-    // computer to select new random letter
+//     // reset guesses left to 0
+//     // reset keys pressed to empty
+//     // computer to select new random letter
 
 }
