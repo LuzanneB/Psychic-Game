@@ -18,31 +18,44 @@ console.log("the computer picked "+ computerGuess);
 
 document.onkeyup = function(event){ 
 
-    var userGuess = event.key;
+    var userGuess = event.key.toLowerCase();
     console.log(event);
 
 
 // // if guess matches computer:
-if (userGuess === computerGuess){wins++;}
-else {guessesleft--};
+//     // update wins to +1
+//     // reset guesses left to 9
+//     // reset keyspressed to empty
+if (userGuess == computerGuess){
+        wins++;
+        winsText.textContent= wins;
+        guessesText.textContent=9;
+        keyspressedText.textContent="-"}
+        // // if guesses left reaches 0
+//     // update losses to +1
+//     // reset guesses left to 9
+else if (guessesleft = 0){
+        losses++;
+        lossesText.textContent = losses;
+        guessesText.textContent=9;
+        keyspressedText.textContent="-"}
+else{
+    guessesleft--;
+
+}};
+
 console.log(wins);
 console.log(guessesleft);
 
-//     // update wins to +1
-winsText.textContent = wins;
-//     // reset guesses left to 9
-//     // reset keyspressed to empty
+
+
 //     // computer to select new random letter
 // // if it does not match:
 //     // updated guesses left to minus 1
 guessesText.textcontent = guessesleft;
 //     // show letter guessed in "key pressed"
 
-// // if guesses left reaches 0
-//     // update losses to +1
-lossesText.textContent = losses;
-//     // reset guesses left to 0
+
 //     // reset keys pressed to empty
 //     // computer to select new random letter
 
-}
